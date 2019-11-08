@@ -116,7 +116,7 @@ $("#add-train").on("click", function (event) {
 
     // Format next arrival
     nextArrivalMins = moment().add(minutesAway, "minutes");
-    nextArrival = moment(nextArrival).format("hh:mm");
+    nextArrival = moment(nextArrivalMins).format("HH:mm");
     console.log("ARRIVAL TIME: " + nextArrival);
 
     // Log values
