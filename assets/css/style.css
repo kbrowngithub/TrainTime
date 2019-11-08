@@ -23,3 +23,14 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  #add-train {
+    background-color: steelblue; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

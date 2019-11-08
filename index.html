@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -29,55 +37,13 @@
                         Current Train Schedule
                     </div> <!-- End First Card Header -->
                     <div class="card-body">
-                        <table>
+                        <table id="trainTable">
                             <tr>
                                 <th>Train Name</th>
                                 <th>Destination</th>
                                 <th>Frequency (min)</th>
                                 <th>Next Arrival</th>
                                 <th>Minutes Away</th>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Dest</td>
-                                <td>Freq</td>
-                                <td>Next Arrival</td>
-                                <td>Minutes</td>
                             </tr>
                         </table>
                     </div> <!-- End First Card Body-->
@@ -92,7 +58,7 @@
                     </div> <!-- End Second Card Header -->
                     <div class="card-body">
 
-                        <!-- TBD: Create new train entry form here -->
+                        <!-- Create new train entry form here -->
                         <form role="form">
                             <div class="form-group">
                                 <label for="name-input">Train Name:</label>
@@ -100,15 +66,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="destination-input">Destination:</label>
-                                <input class="form-control" id="destination-input" type="email">
+                                <input class="form-control" id="destination-input" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="trainTime-input">First Train Time:</label>
-                                <input class="form-control" id="trainTime-input" type="number">
+                                <label for="firstTrain-input">First Train Time (HH:mm - military time):</label>
+                                <input class="form-control" id="firstTrain-input" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="frequency-input">Frequency:</label>
-                                <textarea class="form-control" id="frequency-input" rows="5"></textarea>
+                                <label for="frequency-input">Frequency (min):</label>
+                                <input class="form-control" id="frequency-input" type="text">
                             </div>
                             <button class="btn btn-default" id="add-train" type="submit">Submit</button>
                         </form>
