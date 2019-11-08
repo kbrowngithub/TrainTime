@@ -94,7 +94,8 @@ $("#add-train").on("click", function (event) {
     frequency = parseInt(frequency);
     console.log("frequency = " + frequency);
 
-    firstTrain = moment(firstTrain, "hh:mm");
+    // Subtacting one year ensures we don't run into a future time
+    firstTrain = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log("firstTrain = " + firstTrain);
 
     // Get the current time
