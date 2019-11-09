@@ -117,7 +117,8 @@ function timeCalc() {
 
     // Format next arrival
     nextArrivalMins = moment().add(minutesAway, "minutes");
-    nextArrival = moment(nextArrivalMins).format("HH:mm");
+    //nextArrival = moment(nextArrivalMins).format("HH:mm");
+    nextArrival = moment(nextArrivalMins).format("hh:mm A");
     console.log("ARRIVAL TIME: " + nextArrival);
 
 }
