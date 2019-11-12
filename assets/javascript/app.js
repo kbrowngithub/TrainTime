@@ -26,7 +26,7 @@ var minutesAway;
 var firstTrain;
 var firstTrainToTime;
 
-// At the page load and subsequent value changes, get a snapshot of the stored data.
+// At the page load and subsequent value changes, get a snapshot of the stored data and update display.
 // Listens for a new DB child
 database.ref("/train").on("child_added", function (snapshot) {
     // Populate table fields
@@ -36,8 +36,8 @@ database.ref("/train").on("child_added", function (snapshot) {
     name = sv.name;
     destination = sv.destination;
     frequency = sv.frequency;
-    nextArrival = sv.nextArrival;
-    minutesAway = sv.minutesAway;
+    // nextArrival = sv.nextArrival;
+    // minutesAway = sv.minutesAway;
     firstTrain = sv.firstTrain;
 
     timeCalc();
@@ -87,6 +87,16 @@ database.ref("/train").on("child_added", function (snapshot) {
 //     $("#trainTable > tbody").append(newRow);
 // });
 
+// Displays current time in hh:mm:ss format
+var clockTimer = setInterval(displayClock, 1000);
+function displayClock () {
+    // Upate display with current countdown value
+    var currentTime = moment().format("hh:mm:ss");
+
+    $("#clock").text(currentTime);
+}
+
+// Calculates Next Arrival and Minutes Away
 function timeCalc() {
 
     firstTrainToTime = moment(firstTrain, "hh:mm").format("HH:mm");
@@ -134,6 +144,7 @@ $("#add-train").on("click", function (event) {
     frequency = $("#frequency-input").val().trim();
     firstTrain = $("#firstTrain-input").val().trim();
 
+    // Calculate next arrival and minutes away
     timeCalc();
 
     // Log values
@@ -150,8 +161,8 @@ $("#add-train").on("click", function (event) {
         name: name,
         destination: destination,
         frequency: frequency,
-        nextArrival: nextArrival,
-        minutesAway: minutesAway,
+        // nextArrival: nextArrival,
+        // minutesAway: minutesAway,
         firstTrain: firstTrainToTime,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });

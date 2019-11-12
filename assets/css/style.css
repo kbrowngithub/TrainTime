@@ -1,9 +1,11 @@
 .jumbotron {
     background: steelblue;
     color: white;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
-.card-header {
+.card-header, #clock {
     background: steelblue;
     color: white;
 }
