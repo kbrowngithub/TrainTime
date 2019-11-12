@@ -3,7 +3,10 @@
 
 # Project Overview:
 ```
-A train schedule application that incorporates Firebase to host arrival and departure data and Moment.js to manipulate time calculations. This website provides up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station. It also allows admins to add new trains.
+A train schedule application that incorporates Firebase to host arrival and departure data and Moment.js 
+to manipulate time calculations. This website provides up-to-date information about various trains, 
+namely their arrival times and how many minutes remain until they arrive at their station. It also 
+allows admins to add new trains.
 ```
 
 # Project Requirements:
